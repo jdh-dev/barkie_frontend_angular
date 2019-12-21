@@ -1,0 +1,12 @@
+p.table-title {
+  font-size: 16px;
+}
+
+.game-tables {
+  width: 80%;
+  margin: auto auto;
+}
+
+#firstUpcomingGames p {
+  margin-top: 50px;
+}

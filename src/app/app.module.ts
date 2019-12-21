@@ -3,10 +3,14 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BarkieFooterComponent } from './barkie-footer/barkie-footer.component';
+import { WedstrijdListComponent } from './wedstrijd-list/wedstrijd-list.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BarkieFooterComponent,
+    WedstrijdListComponent
   ],
   imports: [
     BrowserModule,

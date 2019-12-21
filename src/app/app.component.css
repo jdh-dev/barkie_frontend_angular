@@ -1,0 +1,38 @@
+header {
+  font-family: 'Roboto Slab', serif;
+  color: white;
+}
+
+header#index-header {
+  background: url('../assets/media/header.jpg') no-repeat;
+  background-position: center center;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+}
+
+header a:link {
+  color: white;
+}
+
+header a:visited {
+  color: white;
+}
+
+header a:hover {
+  text-decoration: underline !important;
+}
+
+#title{
+  margin: auto auto;
+  font-weight: 800;
+  font-size: 150px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+p.table-title {
+  font-size: 16px;
+}
