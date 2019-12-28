@@ -1,0 +1,71 @@
+#login-container {
+  width: 100%;
+  height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.left-side {
+  width: 30%;
+  height: 100%;
+}
+
+#left-side-background {
+  background: url('../../assets/media/header.jpg') no-repeat;
+  background-position: center center;
+  background-size: cover;
+  float: left;
+}
+
+.absolute-logo {
+  font-family: 'Roboto Slab', serif;
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  z-index: 200;
+  color: white;
+  font-size: 50px;
+}
+
+#left-side-background::before {
+  content: '';
+  color: white;
+  width: 100%;
+  float: left;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.left-side p {
+  color: white;
+  width: 100%;
+  text-align: center;
+}
+
+#right-side {
+  width: 70%;
+  height: 100%;
+  float: right;
+  color: #a8a9ad;
+}
+
+#right-side h1 {
+  font-weight: 200 !important;
+  text-align: center;
+  font-size: 50px;
+}
+
+#slogan {
+  position:absolute; 
+  top: 60%; 
+  left: 0; 
+  z-index: 1; 
+  width: 30%; 
+  color: white !important; 
+  text-align: center;
+}
+
+.right-side-form {
+  margin-top: 100px; 
+  margin-left: 15%; 
+  margin-right: 15%;
+}

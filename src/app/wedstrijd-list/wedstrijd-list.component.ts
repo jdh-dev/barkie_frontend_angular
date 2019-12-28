@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { WedstrijdService } from '../wedstrijd/wedstrijd.service';
-import { Wedstrijd } from '../wedstrijd/wedstrijd';
 
 @Component({
   selector: 'app-wedstrijd-list',

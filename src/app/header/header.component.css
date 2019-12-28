@@ -1,0 +1,31 @@
+header {
+  font-family: 'Roboto Slab', serif;
+  color: white;
+}
+
+header.background-header {
+  background: url('../../assets/media/header.jpg') no-repeat;
+  background-position: center center;
+  background-size: cover;
+  width: 100%;
+}
+
+header.index-header {
+  height: 100vh;
+}
+
+header.wedstrijd-details-header {
+  height: 40vh;
+}
+
+header a:link {
+  color: white;
+}
+
+header a:visited {
+  color: white;
+}
+
+header a:hover {
+  text-decoration: underline !important;
+}

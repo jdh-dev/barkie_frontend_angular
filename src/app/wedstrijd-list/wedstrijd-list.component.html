@@ -1,21 +1,29 @@
-<div class="container" id="firstUpcomingGames">
-  <p class="table-title"><strong>Datum</strong></p> <!-- TODO: PRINT HIER DE DATUM UIT PER WEDSTRIJDDAG -->
-  <table class="table" >
-      <thead>
-          <tr>
-              <th scope="col">#</th>
-              <th scope="col">Wedstrijd</th>
-              <th scope="col">Competitie</th>
-              <th scope="col">Speeltijd</th>
-          </tr>
-      </thead>
-      <tbody>
-          <tr *ngFor="let wedstrijd of wedstrijden">
-            <th scope="row">1</th>
-            <td>{{wedstrijd.kansThuis}}</td>
-            <td>{{wedstrijd.kansThuis}}</td>
-            <td>{{wedstrijd.kansThuis}}</td>
-          </tr>
-      </tbody>
-  </table>
+<div class="section">
+  <div class="container" id="firstUpcomingGames">
+      <p class="table-title"><strong>Datum</strong></p> <!-- TODO: PRINT HIER DE DATUM UIT PER WEDSTRIJDDAG -->
+      <table class="table" >
+          <thead>
+              <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Wedstrijd</th>
+                  <th scope="col">Competitie</th>
+                  <th scope="col">Speeltijd</th>
+                  <th scope="col">Kans thuisteam</th>
+                  <th scope="col">Kans gelijkspel</th>
+                  <th scope="col">Kans uitteam</th>
+              </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let wedstrijd of wedstrijden">
+              <th scope="row">1</th>
+              <td>{{wedstrijd.thuisTeam.naamTeam + ' - ' + wedstrijd.uitTeam.naamTeam}}</td>
+              <td>{{wedstrijd.competitie}}</td>
+              <td>{{wedstrijd.kansThuis}}</td>
+              <td><a href="wedstrijdDetails.html" class="btn btn-outline-success weddenschap-button">{{wedstrijd.kansThuis}}</a></td>
+              <td><a href="wedstrijdDetails.html" class="btn btn-outline-success weddenschap-button">{{wedstrijd.kansGelijk}}</a></td>
+              <td><a href="wedstrijdDetails.html" class="btn btn-outline-success weddenschap-button">{{wedstrijd.kansUit}}</a></td>
+            </tr>
+          </tbody>
+      </table>
+  </div>
 </div>
