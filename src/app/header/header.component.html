@@ -1,10 +1,12 @@
 <header *ngIf="showHeader" class="background-header" [ngClass]="showBigHeader ? 'index-header' : 'wedstrijd-details-header'">
   <ul class="nav justify-content-end">
       <li class="nav-item">
-          <a class="nav-link" href="#">Wallet</a>
+        <a *ngIf="authService.isUserLoggedIn() && !authService.isUserAdmin()" class="nav-link" routerLink="/account">Account</a>
+        <a *ngIf="authService.isUserLoggedIn() && authService.isUserAdmin()" class="nav-link" routerLink="/dashboard">Account</a>
+        <a *ngIf="!authService.isUserLoggedIn()" class="nav-link" routerLink="/login">Inloggen</a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" routerLink="/login">Account</a>
+        <a *ngIf="authService.isUserLoggedIn()" class="nav-link" routerLink="/logout">Uitloggen</a>
       </li>
   </ul>
 </header>

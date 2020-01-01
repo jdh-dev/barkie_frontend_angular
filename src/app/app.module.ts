@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule }    from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS }    from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +13,8 @@ import { CommonModule } from '@angular/common';
 import {LoginRouterModule } from './login/login-routing.module';
 import { HeaderModule } from './header/header.module'
 import { FormsModule } from '@angular/forms';
+import { LogoutComponent } from './logout/logout.component';
+import { BasicAuthHtppInterceptorService } from './auth/basic-auth-htpp-interceptor.service';
 
 
 @NgModule({
@@ -21,7 +23,8 @@ import { FormsModule } from '@angular/forms';
     BarkieFooterComponent,
     LoginComponent,
     HeaderComponent,
-    WedstrijdListComponent
+    WedstrijdListComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,9 @@ import { FormsModule } from '@angular/forms';
     HeaderModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: BasicAuthHtppInterceptorService, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
