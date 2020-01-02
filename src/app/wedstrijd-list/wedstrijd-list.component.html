@@ -18,10 +18,10 @@
               <th scope="row">1</th>
               <td>{{wedstrijd.thuisTeam.naamTeam + ' - ' + wedstrijd.uitTeam.naamTeam}}</td>
               <td>{{wedstrijd.competitie}}</td>
-              <td>{{wedstrijd.kansThuis}}</td>
-              <td><a href="wedstrijdDetails.html" class="btn btn-outline-success weddenschap-button">{{wedstrijd.kansThuis}}</a></td>
-              <td><a href="wedstrijdDetails.html" class="btn btn-outline-success weddenschap-button">{{wedstrijd.kansGelijk}}</a></td>
-              <td><a href="wedstrijdDetails.html" class="btn btn-outline-success weddenschap-button">{{wedstrijd.kansUit}}</a></td>
+              <td>{{wedstrijd.beginTijd}}</td>
+              <td><a [routerLink]="['wedstrijd', wedstrijd.wedstrijd_id]" class="btn btn-outline-success weddenschap-button">{{wedstrijd.kansThuis}}</a></td>
+              <td><a [routerLink]="['wedstrijd', wedstrijd.wedstrijd_id]" class="btn btn-outline-success weddenschap-button">{{wedstrijd.kansGelijk}}</a></td>
+              <td><a [routerLink]="['wedstrijd', wedstrijd.wedstrijd_id]" class="btn btn-outline-success weddenschap-button">{{wedstrijd.kansUit}}</a></td>
             </tr>
           </tbody>
       </table>

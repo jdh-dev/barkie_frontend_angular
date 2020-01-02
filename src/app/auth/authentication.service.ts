@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpParams, HttpResponse, HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators';
 import * as jwt_decode from 'jwt-decode';
-import { Gebruiker } from '../gebruiker/gebruiker';
 
 export class JwtResponse{
   constructor(
@@ -17,7 +15,6 @@ export class JwtResponse{
 })
 export class AuthenticationService {
   private url = 'http://localhost:8082/login';
-  private gebruiker : Gebruiker;
 
   constructor(private http : HttpClient) { }
 

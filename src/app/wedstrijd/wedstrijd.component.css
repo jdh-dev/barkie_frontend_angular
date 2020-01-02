@@ -1,0 +1,31 @@
+#wedstrijd-details-header {
+  height: 40vh;
+  width: 100%;
+}
+
+#wedstrijd-details-header::before {
+  content: '';
+  width: 100%;
+  height: 40vh;
+  float: left;
+  background: rgba(10, 100, 128, 0.8);
+}
+
+.nav-wedstrijd-details {
+  width: 100%;
+  background: rgba(10, 100, 128, 0.8);
+  color: white;
+  padding: 10px;
+}
+
+.nav-wedstrijd-details a:link {
+  color: white;
+}
+
+.nav-wedstrijd-details a:visited {
+  color: white;
+}
+
+.nav-wedstrijd-details a:active {
+  text-decoration: underline;
+}

@@ -1,11 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { WedstrijdListComponent } from '../wedstrijd-list/wedstrijd-list.component';
+import { WedstrijdComponent } from '../wedstrijd/wedstrijd.component';
 
 const routes: Routes = [
   { 
-    path: 'wedstrijdList', 
-    component: WedstrijdListComponent 
+    path: 'wedstrijd', 
+    children: [
+      { path: '', component: WedstrijdListComponent },
+      { path: ':id', component: WedstrijdComponent }
+    ]
   }
 ];
 

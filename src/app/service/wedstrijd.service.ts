@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class WedstrijdService {
 
-  private url = 'http://localhost:8082/wedstrijden';
+  private url = 'http://localhost:8082/wedstrijd';
 
   constructor(private http : HttpClient) { }
 
@@ -15,7 +15,14 @@ export class WedstrijdService {
    * This method returns a list of Wedstrijd objects
    */
   getWedstrijden() : Observable<any> {
-    return this.http.get<any>(this.url);
+    return this.http.get<any>(this.url + "/");
+  }
+
+  /**
+   * This method returns the wedstrijd object based on id
+   */
+  getWedstrijdById(id : number) : Observable<any> {
+    return this.http.get<any>(this.url + "/" + id);
   }
 
 }

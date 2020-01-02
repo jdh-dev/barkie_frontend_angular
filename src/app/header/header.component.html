@@ -1,6 +1,9 @@
 <header *ngIf="showHeader" class="background-header" [ngClass]="showBigHeader ? 'index-header' : 'wedstrijd-details-header'">
   <ul class="nav justify-content-end">
-      <li class="nav-item">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/aanvraag">Wallet</a>
+    </li>
+    <li class="nav-item">
         <a *ngIf="authService.isUserLoggedIn() && !authService.isUserAdmin()" class="nav-link" routerLink="/account">Account</a>
         <a *ngIf="authService.isUserLoggedIn() && authService.isUserAdmin()" class="nav-link" routerLink="/dashboard">Account</a>
         <a *ngIf="!authService.isUserLoggedIn()" class="nav-link" routerLink="/login">Inloggen</a>
@@ -9,4 +12,22 @@
         <a *ngIf="authService.isUserLoggedIn()" class="nav-link" routerLink="/logout">Uitloggen</a>
       </li>
   </ul>
+
+  <!-- MATCH CARD
+  <div class="container-fluid position-absolute" *ngIf="showMatchDetail">
+    <div class="row text-center" style="height: 40vh;"> 
+        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 text-right align-self-end mb-3" style="font-size: 20px;">
+            Liverpool
+        </div>
+
+        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 text-center align-self-center mb3">
+            <p style="font-size: 80px; font-weight: 800;">4 - 0</p>
+            <p>21-01-2020</p>
+        </div>
+
+        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 text-left align-self-end mb-3" style="font-size: 20px;">
+            FC Barcelona
+        </div>
+    </div>
+  </div> -->
 </header>
