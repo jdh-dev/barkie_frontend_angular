@@ -1,6 +1,6 @@
 <header *ngIf="showHeader" class="background-header" [ngClass]="showBigHeader ? 'index-header' : 'wedstrijd-details-header'">
   <ul class="nav justify-content-end">
-    <li class="nav-item">
+    <li class="nav-item" *ngIf="authService.isUserLoggedIn()">
       <a class="nav-link" routerLink="/aanvraag">Wallet</a>
     </li>
     <li class="nav-item">

@@ -1,25 +1,23 @@
-// import { Injectable } from '@angular/core';
-// import { Observable } from 'rxjs';
-// import { HttpParams, HttpResponse, HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { HttpParams, HttpResponse, HttpClient } from '@angular/common/http';
+import { Aanvraag } from '../aanvraag/aanvraag';
 
-// @Injectable({
-//   providedIn: 'root'
-// })
-// export class AanvraagService {
+@Injectable({
+  providedIn: 'root'
+})
+export class AanvraagService {
 
-//   private url = 'http://localhost:8082/aanvraag';
+  private url = 'http://localhost:8082/aanvraag';
 
-//   constructor(private http : HttpClient) { }
+  constructor(private http : HttpClient) { }
 
-//   authenticate() : Observable<HttpResponse<any>> {
-//     const httpOptions = {
-//       observe: 'response' as 'response',
+  addAanvraag(aanvraag: Aanvraag) : Observable<HttpResponse<any>> {
+    const httpOptions = {
+      observe: 'response' as 'response'
+  };
 
-//       params: new HttpParams()
-//       .set('username', username)
-//       .set('password', password)
-//     };
-
-//     return this.http.post<HttpResponse<any>>(this.url, null, httpOptions);
-//   }
-// }
+    return this.http.post<HttpResponse<any>>((this.url + "/"), aanvraag, httpOptions);
+  }
+  
+}
