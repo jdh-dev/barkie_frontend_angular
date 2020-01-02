@@ -20,7 +20,8 @@ time, mark, audio, video {
 }
 
 .section {
-    height: 100vh;
+    min-height: 100vh;
+    padding: 50px 0;
     width: 100%;
 }
 

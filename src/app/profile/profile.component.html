@@ -1,0 +1,79 @@
+<div class="section">
+  <div class="container">
+  <div class="row">
+    <div class="col-3">
+      <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+        <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Profiel</a>
+        <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Wallet</a>
+        <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Weddenschappen</a>
+      </div>
+    </div>
+    <div class="col-9">
+      <div class="tab-content" id="v-pills-tabContent">
+        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+          test
+        </div>
+        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+          <h1 class="mb-4" style="font-size: 30px;">Wallet</h1>
+
+          <div class="card mb-4">
+            <div class="card-body">
+              <dl class="row">
+                <dt class="col-sm-3">Saldo:</dt>
+                <dd class="col-sm-9">{{gebruiker.saldo}}</dd>
+              </dl>
+            </div>
+          </div>
+
+          <!-- AANVRAAG TABLE -->
+          <h1 style="font-size: 20px;">Aanvragen ingediend</h1>
+          <div class="card mb-4">
+            <div class="card-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Datum ingediend</th>
+                    <th scope="col">Bedrag</th>
+                    <th scope="col">Goedgekeurd</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let aanvraag of aanvragen index as i">
+                    <th scope="row">{{i+1}}</th>
+                    <td>{{aanvraag.dateAdded}}</td>
+                    <td>{{aanvraag.bedrag}}</td>
+                    <td>{{aanvraag.goedgekeurd}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <h1 style="font-size: 20px;">Saldo opwaarderen</h1>
+          <div class="card mb-4">
+            <div class="card-body">
+              <form (ngSubmit)="onSubmitAanvraag(aanvraagForm)" #aanvraagForm="ngForm">
+                <div class="form-group">
+                  <label for="inputBedrag">Bedrag</label>
+                  <input [(ngModel)]="formData.bedrag" 
+                                            type="number" 
+                                            name="bedrag" 
+                                            class="form-control" 
+                                            id="inputBedrag" 
+                                            value="1.00" 
+                                            required>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+            </div>
+          </div>
+
+        </div>
+        <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...</div>
+        <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

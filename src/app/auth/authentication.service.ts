@@ -1,14 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HttpParams, HttpResponse, HttpClient } from '@angular/common/http';
+import { HttpParams, HttpResponse, HttpClient, HttpHeaders } from '@angular/common/http';
 import * as jwt_decode from 'jwt-decode';
-
-export class JwtResponse{
-  constructor(
-    public jwttoken:string,
-     ) {}
-  
-}
+import { Gebruiker } from '../gebruiker/gebruiker';
+import { GebruikerService } from '../service/gebruiker.service';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +11,9 @@ export class JwtResponse{
 export class AuthenticationService {
   private url = 'http://localhost:8082/login';
 
-  constructor(private http : HttpClient) { }
+  constructor(private http : HttpClient, private gebruikerService : GebruikerService) { }
+
+  gebruiker = new Gebruiker();
 
   authenticate(username: string, password: string) : Observable<HttpResponse<any>> {
     const httpOptions = {
@@ -31,18 +28,18 @@ export class AuthenticationService {
   }
 
   isUserAdmin() : boolean {
-    let token = sessionStorage.getItem('Authorization')
+    let token = sessionStorage.getItem('Authorization');
     let decoded = jwt_decode(token);
     return decoded.rol.includes("ROLE_ADMIN");
   }
 
   isUserLoggedIn() : boolean {
-    let token = sessionStorage.getItem('Authorization')
+    let token = sessionStorage.getItem('Authorization');
     return !(token === null);
   }
 
   logOut() {
-    sessionStorage.removeItem('Authorization')
+    sessionStorage.removeItem('Authorization');
   }
 
 }

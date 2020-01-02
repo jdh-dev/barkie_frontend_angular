@@ -19,5 +19,13 @@ export class AanvraagService {
 
     return this.http.post<HttpResponse<any>>((this.url + "/"), aanvraag, httpOptions);
   }
+
+  /**
+   * This method returns a List of Aanvraag objects based on 
+   * @param user_id
+   */
+  getAllAanvragenOfUser() : Observable<any> {
+    return this.http.get<HttpResponse<any>>((this.url + "/fromLoggedInUser"));
+  }
   
 }

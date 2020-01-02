@@ -29,8 +29,8 @@ export class LoginComponent implements OnInit {
         if (resp.status == 200) {
           alert("U bent succesvol ingelogd");
           sessionStorage.setItem("Authorization", resp.headers.get("Authorization"));
-          this.router.navigate([''])
           this.invalidLogin = false;
+          this.router.navigate([''])
         }
       },
         error => {

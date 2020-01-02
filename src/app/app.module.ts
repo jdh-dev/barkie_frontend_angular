@@ -16,7 +16,7 @@ import { FormsModule } from '@angular/forms';
 import { LogoutComponent } from './logout/logout.component';
 import { BasicAuthHtppInterceptorService } from './auth/basic-auth-htpp-interceptor.service';
 import { WedstrijdComponent } from './wedstrijd/wedstrijd.component';
-import { AanvraagComponent } from './aanvraag/aanvraag.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 @NgModule({
@@ -28,7 +28,7 @@ import { AanvraagComponent } from './aanvraag/aanvraag.component';
     WedstrijdListComponent,
     LogoutComponent,
     WedstrijdComponent,
-    AanvraagComponent
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
