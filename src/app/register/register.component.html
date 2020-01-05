@@ -1,0 +1,43 @@
+<head>
+  <!-- Google font import -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600&display=swap" rel="stylesheet">
+</head>
+<div id="login-container">
+<div class="left-side" id="left-side-background">
+
+    <div class="absolute-logo">
+        <span>Barkie.</span>
+    </div>
+</div>
+<div id="slogan">
+    <p>Nobody does it like Barkie</p>
+</div>
+
+<div id="right-side">
+    <div class="right-side-form">
+        <h1>Registreren</h1>
+
+        <div class="container mt-5">
+            <form (ngSubmit)="onSubmit(registerForm)" #registerForm="ngForm">
+                <div class="form-group">
+                    <label for="gebruikersnaamInput">Gebruikersnaam</label>
+                    <input [(ngModel)]="formData.username" 
+                          type="text" 
+                          name="username" 
+                          class="form-control" 
+                          id="gebruikersnaamInput" 
+                          placeholder="Voer gebruikersnaam in" 
+                          required>
+                </div>
+                <div class="form-group">
+                    <label for="passwordInput">Wachtwoord</label>
+                    <input [(ngModel)]="formData.password" type="password" name="password" class="form-control" id="passwordInput" placeholder="Voer wachtwoord in" required>
+                </div>
+                <button type="submit" class="mt-3">Registreer</button>
+            </form>
+
+            <p class="mt-4">Bestaande gebruiker? Log je <a routerLink="/login">hier</a> in</p>
+        </div>
+    </div>
+</div>
+</div>

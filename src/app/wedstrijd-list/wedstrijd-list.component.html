@@ -14,14 +14,14 @@
               </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let wedstrijd of wedstrijden">
-              <th scope="row">1</th>
-              <td>{{wedstrijd.thuisTeam.naamTeam + ' - ' + wedstrijd.uitTeam.naamTeam}}</td>
-              <td>{{wedstrijd.competitie}}</td>
+            <tr *ngFor="let wedstrijd of wedstrijden index as i">
+              <th scope="row">{{i+1}}</th>
+              <td>{{wedstrijd.thuisTeam.naam + ' - ' + wedstrijd.uitTeam.naam}}</td>
+              <td>{{wedstrijd.competitie.naam}}</td>
               <td>{{wedstrijd.beginTijd}}</td>
-              <td><a [routerLink]="['wedstrijd', wedstrijd.wedstrijd_id]" class="btn btn-outline-success weddenschap-button">{{wedstrijd.kansThuis}}</a></td>
-              <td><a [routerLink]="['wedstrijd', wedstrijd.wedstrijd_id]" class="btn btn-outline-success weddenschap-button">{{wedstrijd.kansGelijk}}</a></td>
-              <td><a [routerLink]="['wedstrijd', wedstrijd.wedstrijd_id]" class="btn btn-outline-success weddenschap-button">{{wedstrijd.kansUit}}</a></td>
+              <td><a [routerLink]="['wedstrijd', wedstrijd.id]" class="btn btn-outline-success weddenschap-button">{{wedstrijd.kansThuis}}</a></td>
+              <td><a [routerLink]="['wedstrijd', wedstrijd.id]" class="btn btn-outline-success weddenschap-button">{{wedstrijd.kansGelijk}}</a></td>
+              <td><a [routerLink]="['wedstrijd', wedstrijd.id]" class="btn btn-outline-success weddenschap-button">{{wedstrijd.kansUit}}</a></td>
             </tr>
           </tbody>
       </table>

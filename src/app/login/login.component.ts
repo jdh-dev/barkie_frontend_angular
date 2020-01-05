@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginFormData } from './LoginFormData';
+import { CredentialsFormData } from './CredentialsFormData';
 import { NgForm } from '@angular/forms';
 import { HttpResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
@@ -12,7 +12,7 @@ import { AuthenticationService } from '../auth/authentication.service';
 })
 export class LoginComponent implements OnInit {
 
-  formData = new LoginFormData('', '');
+  formData = new CredentialsFormData('', '');
 
   invalidLogin : boolean = false
 

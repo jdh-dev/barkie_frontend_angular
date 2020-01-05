@@ -17,6 +17,7 @@ import { LogoutComponent } from './logout/logout.component';
 import { BasicAuthHtppInterceptorService } from './auth/basic-auth-htpp-interceptor.service';
 import { WedstrijdComponent } from './wedstrijd/wedstrijd.component';
 import { ProfileComponent } from './profile/profile.component';
+import { RegisterComponent } from './register/register.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { ProfileComponent } from './profile/profile.component';
     WedstrijdListComponent,
     LogoutComponent,
     WedstrijdComponent,
-    ProfileComponent
+    ProfileComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

@@ -27,6 +27,14 @@ export class AuthenticationService {
     return this.http.post<HttpResponse<any>>(this.url, null, httpOptions);
   }
 
+  register(username: string, password: string) : Observable<HttpResponse<any>> {
+    const httpOptions = {
+      observe: 'response' as 'response'
+    };
+
+    return this.http.post<HttpResponse<any>>("http://localhost:8082/gebruiker/create", {username : username, password : password}, httpOptions);
+  }
+
   isUserAdmin() : boolean {
     let token = sessionStorage.getItem('Authorization');
     let decoded = jwt_decode(token);
